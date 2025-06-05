@@ -1,0 +1,22 @@
+:root {
+  /* צבעים עיקריים */
+  --color-primary: #6c3bf7;      /* סגול ראשי */
+  --color-primary-dark: #4f28c6; /* סגול כהה */
+  --color-secondary: #f7f7fc;    /* רקע ניווט */
+  --color-accent: #7c3aed;       /* כפתורים */
+  --color-accent-hover: #6d28d9; /* כפתור במעבר */
+
+  /* צבעי טקסט */
+  --color-text-main: #213547;   /* טקסט רגיל כהה */
+  --color-text-light: #888888;  /* טקסט עזר/מוסבר */
+
+  /* צבעי רקע */
+  --color-bg: #f3f4f6;           /* רקע כללי */
+  --color-white: #ffffff;
+  --color-border: #ddd;          /* מסגרות */
+
+  /* טיפוגרפיה */
+  --font-main: "Segoe UI", "Helvetica", "Arial", sans-serif;
+  --font-size-base: 16px;
+  --font-weight-bold: 600;
+}

@@ -1,0 +1,26 @@
+.navBar {
+  background-color: #f7f7fc;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navList li a {
+  color: #6c3bf7;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navList li a:hover {
+  color: #4f28c6;
+}
