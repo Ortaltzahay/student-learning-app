@@ -1,0 +1,164 @@
+.wrapper {
+  direction: rtl;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.addBtn {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter {
+  background-color: #f5f3ff; /* לבנדר בהיר מאוד */
+  border: 2px solid #7c3aed;
+  border-radius: 0.75rem;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  color: #5b21b6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter:hover {
+  background-color: #ede9fe;
+  color: #4c1d95;
+}
+
+.sorting {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sorting input,
+.sorting select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.table th {
+  background-color: #f9f9f9;
+  color: #444;
+  font-weight: bold;
+}
+
+.taskName {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #222;
+}
+
+.actions button {
+  margin-left: 0.5rem;
+  background: white;
+  border: 2px solid #7c3aed;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #6c3bf7;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.actions button:hover {
+  background-color: #6c3bf7;
+  color: white;
+}
+
+.status {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+}
+
+.inProgress {
+  background-color: #a5b4fc;
+  color: #1e40af;
+}
+
+.inProgressYellow {
+  background-color: #fde68a;
+  color: #92400e;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sorting {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.85rem;
+    padding: 0.8rem;
+  }
+}

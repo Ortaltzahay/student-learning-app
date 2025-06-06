@@ -1,0 +1,81 @@
+.homeContainer {
+  direction: rtl;
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.textBlock {
+  max-width: 600px;
+}
+
+.textBlock h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.textBlock p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.primaryBtn {
+  background-color: #7c3aed;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  background-color: white;
+  color: #7c3aed;
+  border: 2px solid #7c3aed;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.callToAction {
+  background: linear-gradient(145deg, #8b5cf6, #a78bfa);
+  border-radius: 1rem;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  min-width: 180px;
+  align-self: center;
+}
+
+.joinBtn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}

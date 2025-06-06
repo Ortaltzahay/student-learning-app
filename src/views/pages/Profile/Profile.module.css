@@ -1,0 +1,143 @@
+.wrapper {
+  direction: rtl;
+  padding: 2rem 1rem;
+  background: linear-gradient(to bottom right, #f3f4ff, #ece8fc);
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.profileTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.avatar {
+  background: linear-gradient(to right, #7c3aed, #8b5cf6);
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #666;
+  margin: 0.3rem 0 1rem;
+}
+
+.editBtn {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  max-width: 450px;
+  min-width: 300px;
+  text-align: right;
+}
+
+.cardTitle {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.table td {
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.courses p {
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+.courses ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.courses li {
+  margin: 0.3rem 0;
+}
+
+.courses a {
+  color: #7c3aed;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.activityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activityList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.activityList span {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 95%;
+  }
+}

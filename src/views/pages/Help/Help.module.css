@@ -1,0 +1,155 @@
+.wrapper {
+  direction: rtl;
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  color: #3f3ff4;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.search {
+  width: 100%;
+  max-width: 550px;
+  display: block;
+  margin: 0 auto 1.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tags button {
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #444;
+  transition: background 0.3s;
+}
+
+.tags button:hover {
+  background: #f0f0ff;
+}
+
+.tags .active {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+}
+
+.sections {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #dcdcdc;
+  padding-bottom: 0.5rem;
+}
+
+.faqList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faqItem {
+  background: #f8f8ff;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.faqItem:hover {
+  background: #ede9fe;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.faqItem strong {
+  color: #4f46e5;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.faqItem p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.footerBox {
+  margin-top: 3rem;
+  text-align: center;
+  background: white;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.report {
+  background: #f87171;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.message {
+  background: #6366f1;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sections {
+    flex-direction: column;
+    align-items: center;
+  }
+}
