@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 import FeatureCard from '../../components/FeatureCard/FeatureCard';
+import { auth, db } from '../../../firebase/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
 
 export default function Home() {
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const docRef = doc(db, 'users', user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const fullName = docSnap.data().fullName;
+          const firstName = fullName.split(' ')[0];
+          setUserName(firstName);
+        }
+      } else {
+        setUserName('');
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const features = [
     {
       icon: 'TASK',
@@ -27,6 +50,7 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.textBlock}>
+            {userName && <p className={styles.welcome}>שלום {userName} 👋!</p>}
             <h1>סיכומים מקצועיים וחומרי למידה מרוכזים במקום אחד</h1>
             <p>
               הצטרף לקהילת הלמידה של <strong>SmartStudy</strong> וקבל גישה לסיכומים איכותיים

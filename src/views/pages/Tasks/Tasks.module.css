@@ -16,21 +16,30 @@
 .subtitle {
   text-align: center;
   color: #666;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   font-size: 0.95rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 1rem;
 }
 
 .controls {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background: #fff;
   padding: 1rem 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .addBtn {
@@ -51,32 +60,19 @@
 }
 
 .filter {
-  background-color: #f5f3ff; /* לבנדר בהיר מאוד */
+  background-color: #f5f3ff;
   border: 2px solid #7c3aed;
   border-radius: 0.75rem;
   padding: 0.4rem 1rem;
   font-weight: bold;
   color: #5b21b6;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.filter:hover {
-  background-color: #ede9fe;
-  color: #4c1d95;
-}
-
-.sorting {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.sorting input,
-.sorting select {
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
+.filter:hover,
+.active {
+  background-color: #7c3aed;
+  color: white;
 }
 
 .table {
@@ -118,7 +114,6 @@
   font-weight: bold;
   color: #6c3bf7;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .actions button:hover {
@@ -127,7 +122,7 @@
 }
 
 .status {
-  padding: 0.3rem 0.9rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: bold;
@@ -135,14 +130,20 @@
   display: inline-block;
 }
 
-.inProgress {
-  background-color: #a5b4fc;
-  color: #1e40af;
+.בהמתנה {
+  background-color: #d8b4fe;
 }
 
-.inProgressYellow {
-  background-color: #fde68a;
-  color: #92400e;
+.בתהליך {
+  background-color: #60a5fa;
+}
+
+.בוצע {
+  background-color: #4ade80;
+}
+
+.editing {
+  background-color: #f3e8ff;
 }
 
 @media (max-width: 768px) {
@@ -151,14 +152,14 @@
     align-items: flex-start;
   }
 
-  .sorting {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
   .table th,
   .table td {
     font-size: 0.85rem;
-    padding: 0.8rem;
+    padding: 0.6rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

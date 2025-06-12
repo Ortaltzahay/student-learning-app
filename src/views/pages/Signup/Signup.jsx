@@ -1,6 +1,9 @@
 import styles from './Signup.module.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../../../firebase/firebase';
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -10,16 +13,46 @@ export default function Signup() {
     confirmPassword: '',
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (formData.password !== formData.confirmPassword) {
       alert('הסיסמאות לא תואמות!');
       return;
     }
-    alert('נרשמת בהצלחה 🎉');
+
+    try {
+      // יצירת משתמש חדש
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+
+      const user = userCredential.user;
+
+      // שמירת נתונים נוספים במסד הנתונים
+      await setDoc(doc(db, 'users', user.uid), {
+        fullName: formData.fullName,
+        email: formData.email,
+        createdAt: new Date(),
+      });
+
+      alert('נרשמת בהצלחה!');
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+      if (error.code === 'auth/email-already-in-use') {
+        alert('כתובת האימייל כבר בשימוש.');
+      } else {
+        alert('אירעה שגיאה. אנא נסה שוב.');
+      }
+    }
   };
 
   return (

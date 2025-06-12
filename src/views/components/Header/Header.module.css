@@ -1,0 +1,54 @@
+.navBar {
+  background-color: #f7f7fc;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navList li a {
+  color: #6c3bf7;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navList li a:hover {
+  color: #4f28c6;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  direction: rtl;
+}
+
+.userText {
+  color: #6c3bf7;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.logoutBtn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}

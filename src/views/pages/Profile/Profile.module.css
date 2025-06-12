@@ -40,7 +40,7 @@
 }
 
 .editBtn {
-  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  background: #9147ff;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -51,11 +51,23 @@
   margin-top: 0.5rem;
 }
 
+.cancelBtn {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.7rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .cards {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 }
 
 .card {
@@ -74,6 +86,7 @@
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  text-align: right;
 }
 
 .table {
@@ -128,6 +141,29 @@
 .activityList span {
   color: #888;
   font-size: 0.85rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.editField {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  direction: rtl;
+}
+
+.highlightCard {
+  border: 2px dashed #9147ff;
+  background-color: #f9f5ff;
 }
 
 @media (max-width: 768px) {

@@ -1,6 +1,8 @@
 import styles from './Login.module.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../firebase/firebase';
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -8,12 +10,35 @@ export default function Login() {
     password: '',
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('התחברת בהצלחה!');
+
+    try {
+      // ניסיון התחברות
+      await signInWithEmailAndPassword(auth, formData.email, formData.password);
+      alert('התחברת בהצלחה!');
+      navigate('/'); // לאחר ההתחברות – מעבר לדף הבית
+    } catch (error) {
+      console.error('שגיאת התחברות:', error);
+      switch (error.code) {
+        case 'auth/user-not-found':
+          alert('המשתמש לא נמצא. ודא שכתובת הדוא"ל נכונה.');
+          break;
+        case 'auth/wrong-password':
+          alert('סיסמה שגויה.');
+          break;
+        case 'auth/invalid-email':
+          alert('כתובת אימייל לא חוקית.');
+          break;
+        default:
+          alert('אירעה שגיאה. נסה שוב.');
+      }
+    }
   };
 
   return (
